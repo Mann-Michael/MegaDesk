@@ -1,0 +1,13 @@
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\bin\Debug\MegaDesk-3-MichaelMann.exe.config
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\bin\Debug\MegaDesk-3-MichaelMann.exe
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\bin\Debug\MegaDesk-3-MichaelMann.pdb
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk-3-MichaelMann.csprojAssemblyReference.cache
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk_3_MichaelMann.MainMenu.resources
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk_3_MichaelMann.Properties.Resources.resources
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk-3-MichaelMann.csproj.GenerateResource.cache
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk-3-MichaelMann.csproj.CoreCompileInputs.cache
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk-3-MichaelMann.exe
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk-3-MichaelMann.pdb
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk_3_MichaelMann.AddQuote.resources
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk_3_MichaelMann.SearchQuotes.resources
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk_3_MichaelMann.ViewAllQuotes.resources
