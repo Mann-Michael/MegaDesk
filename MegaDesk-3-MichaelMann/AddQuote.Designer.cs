@@ -66,6 +66,11 @@
             // 
             this.cmbBuildOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuildOption.FormattingEnabled = true;
+            this.cmbBuildOption.Items.AddRange(new object[] {
+            "3",
+            "5",
+            "7",
+            "14"});
             this.cmbBuildOption.Location = new System.Drawing.Point(151, 266);
             this.cmbBuildOption.Name = "cmbBuildOption";
             this.cmbBuildOption.Size = new System.Drawing.Size(181, 28);
@@ -85,7 +90,7 @@
             this.nudWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudWidth.Location = new System.Drawing.Point(151, 72);
             this.nudWidth.Maximum = new decimal(new int[] {
-            150,
+            96,
             0,
             0,
             0});
@@ -194,7 +199,7 @@
             // 
             this.lblBuildOption.AutoSize = true;
             this.lblBuildOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuildOption.Location = new System.Drawing.Point(40, 264);
+            this.lblBuildOption.Location = new System.Drawing.Point(40, 266);
             this.lblBuildOption.Name = "lblBuildOption";
             this.lblBuildOption.Size = new System.Drawing.Size(86, 20);
             this.lblBuildOption.TabIndex = 11;
@@ -220,6 +225,7 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // errorProvider1
             // 

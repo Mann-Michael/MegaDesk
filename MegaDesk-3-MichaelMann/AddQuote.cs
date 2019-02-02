@@ -15,7 +15,13 @@ namespace MegaDesk_3_MichaelMann
         public AddQuote()
         {
             InitializeComponent();
-        }
+
+            List<Desk.SurfaceMaterials> listMaterials = Enum.GetValues(typeof(Desk.SurfaceMaterials)).Cast<Desk.SurfaceMaterials>().ToList();
+            cmbMaterial.DataSource = listMaterials;
+
+            cmbBuildOption.DataSource = DeskQuote.ShippingOptionsList;
+
+        }    
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -79,5 +85,24 @@ namespace MegaDesk_3_MichaelMann
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int width = Convert.ToInt16(nudWidth.Value);
+            int depth = Convert.ToInt16(nudDepth.Value);
+            int countDrawer = Convert.ToInt16(nudCountDrawer.Value);
+            string material = cmbMaterial.Text;
+            int buildOption = Convert.ToInt16(cmbBuildOption.SelectedValue);
+            string customerName = txtName.Text;
+
+            DeskQuote dq = new DeskQuote(width, depth, countDrawer, material, buildOption, customerName);
+            int finalQuote = dq.CalcFinalQuote();
+            dq.SaveQuote(finalQuote);
+
+
+            //set width, depth, material and count drawer
+            //run desk quote 
+            //save desk quote
+            //pop up window with quote info on it
+        }
     }
 }
