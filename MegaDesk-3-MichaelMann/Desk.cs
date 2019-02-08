@@ -13,6 +13,7 @@ namespace MegaDesk_3_MichaelMann
         public int CountDrawer { get; set; }
         public string SurfaceMaterial { get; set; }
 
+        //Surface material enum
         public enum SurfaceMaterials { Oak, Laminate, Pine, Rosewood, Veneer }
 
     }

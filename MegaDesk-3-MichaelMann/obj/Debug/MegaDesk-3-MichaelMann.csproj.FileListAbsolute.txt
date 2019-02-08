@@ -11,3 +11,8 @@ C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\De
 C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk_3_MichaelMann.AddQuote.resources
 C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk_3_MichaelMann.SearchQuotes.resources
 C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk_3_MichaelMann.ViewAllQuotes.resources
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\bin\Debug\Newtonsoft.Json.dll
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\bin\Debug\Newtonsoft.Json.Schema.dll
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\bin\Debug\Newtonsoft.Json.xml
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\bin\Debug\Newtonsoft.Json.Schema.xml
+C:\Users\unoma\source\repos\MegaDesk-3-MichaelMann\MegaDesk-3-MichaelMann\obj\Debug\MegaDesk-3-MichaelMann.csproj.CopyComplete

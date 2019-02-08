@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,12 @@ namespace MegaDesk_3_MichaelMann
         {
             InitializeComponent();
 
+            //set up the list of surface materials from an enum per week 4 assignment. 
             List<Desk.SurfaceMaterials> listMaterials = Enum.GetValues(typeof(Desk.SurfaceMaterials)).Cast<Desk.SurfaceMaterials>().ToList();
             cmbMaterial.DataSource = listMaterials;
 
-            cmbBuildOption.DataSource = DeskQuote.ShippingOptionsList;
+            //set up building options for drop down menu
+            cmbBuildOption.DataSource = DeskQuote.BuildingOptionsList;
 
         }    
 
@@ -30,9 +33,8 @@ namespace MegaDesk_3_MichaelMann
             Close();
         }
 
-
-        private void nudWidth_Validating(object sender,
-                 System.ComponentModel.CancelEventArgs e)
+        //****************** BEGIN validating information per week 3 assignment (i just minimize this stuff)
+        private void nudWidth_Validating(object sender, CancelEventArgs e)
         {
             string errorMsg;
             if (!ValidWidth(Convert.ToInt32(nudWidth.Value), out errorMsg))
@@ -85,8 +87,11 @@ namespace MegaDesk_3_MichaelMann
             }
         }
 
+        //****************** END of validating information per week 3 assignment (i just minimize this stuff)
+
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //takes information from the form, gets the final quote and saves it
             int width = Convert.ToInt16(nudWidth.Value);
             int depth = Convert.ToInt16(nudDepth.Value);
             int countDrawer = Convert.ToInt16(nudCountDrawer.Value);
@@ -94,15 +99,20 @@ namespace MegaDesk_3_MichaelMann
             int buildOption = Convert.ToInt16(cmbBuildOption.SelectedValue);
             string customerName = txtName.Text;
 
+            //Instantiate DeskQuote and send the form information to it
             DeskQuote dq = new DeskQuote(width, depth, countDrawer, material, buildOption, customerName);
-            int finalQuote = dq.CalcFinalQuote();
-            dq.SaveQuote(finalQuote);
+            
+            //Get final quote
+            dq.CalcFinalQuote();
 
+            //serialize the dq object for sending to save quote
+            string json = JsonConvert.SerializeObject(dq);
+            //Uncomment the line below for Debug information for JSON test
+            //System.Windows.Forms.MessageBox.Show(json);
 
-            //set width, depth, material and count drawer
-            //run desk quote 
-            //save desk quote
-            //pop up window with quote info on it
+            //Save the quote
+            dq.SaveQuote(json);
+
         }
     }
 }

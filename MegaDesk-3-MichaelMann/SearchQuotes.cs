@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,48 +35,47 @@ namespace MegaDesk_3_MichaelMann
             string material = cmbMaterial.Text;
             lbQuotes.Items.Clear();
 
-            List<List<string>> groups = new List<List<string>>();
-            List<string> current = null;
-            foreach (var line in System.IO.File.ReadAllLines(@"quote.txt"))
+            try
             {
-                if (line.Contains(material) && current == null)
+                //check if file exists
+                if (File.Exists(@"quotes.json"))
                 {
-                    string formattedQuote = String.Empty;
-                    string[] arrQuote = line.Split(',');
-                    int fieldCounter = 0;
-                    foreach (string thisField in arrQuote)
+                    //set initialJson to the text within the file
+                    var initialJson = File.ReadAllText(@"quotes.json");
+
+                    //parses file contents to a JArray named "array"
+                    var array = JArray.Parse(initialJson);
+
+                    foreach (JObject quote in array)
                     {
-                        switch (fieldCounter)
+                        //create DeskQuote object from this record in the array
+                        DeskQuote dq = quote.ToObject<DeskQuote>();
+                        
+                        //if it has the selected surface material, format a string and add to list box
+                        if (dq.QuotedDesk.SurfaceMaterial == material)
                         {
-                            case 0:
-                                formattedQuote += "Date: " + thisField;
-                                break;
-                            case 1:
-                                formattedQuote += ", Name: " + thisField;
-                                break;
-                            case 2:
-                                formattedQuote += ", Width: " + thisField;
-                                break;
-                            case 3:
-                                formattedQuote += ", Depth: " + thisField;
-                                break;
-                            case 4:
-                                formattedQuote += ", # of Drawers: " + thisField;
-                                break;
-                            case 5:
-                                formattedQuote += ", Surface Material: " + thisField;
-                                break;
-                            case 6:
-                                formattedQuote += ", Build Time: " + thisField;
-                                break;
-                            case 7:
-                                formattedQuote += ", Quote: $" + thisField;
-                                break;
+                            string formattedString = "Date: " + dq.QuoteDate;
+                            formattedString += " Name: " + dq.SelectedCustomerName;
+                            formattedString += " Width: " + dq.QuotedDesk.Width;
+                            formattedString += " Depth: " + dq.QuotedDesk.Depth;
+                            formattedString += " # of Drawers: " + dq.QuotedDesk.CountDrawer;
+                            formattedString += " Material: " + dq.QuotedDesk.SurfaceMaterial;
+                            formattedString += " Build Time: " + dq.SelectedBuildOption + " days";
+                            formattedString += " Quote: $" + dq.QuotedFinalCost;
+                            lbQuotes.Items.Add(formattedString);
                         }
-                        fieldCounter++;
                     }
-                    lbQuotes.Items.Add(formattedQuote);
                 }
+                else
+                {
+                    //if the file does nto exist, show the message box
+                    MessageBox.Show(@"You have no quotes saved!");
+                }
+            }
+            catch (Exception ex)
+            {
+                //if there is an exception, show the error message
+                MessageBox.Show(@"Failed to find quotes!" + "\n" + ex.Message);
             }
         }
     }
